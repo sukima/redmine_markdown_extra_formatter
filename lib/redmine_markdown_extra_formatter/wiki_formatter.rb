@@ -7,42 +7,44 @@ module BlueFeather
 
     # derived from bluefeather.rb
 
-    TOCRegexp = %r{
-      ^\{    # bracket on line-head
-      [ ]*    # optional inner space
-      ([<>])?
-      toc
+    # Removed due to Rails 3 warnings:
+    # TOCRegexp = %r{
+      # ^\{    # bracket on line-head
+      # [ ]*    # optional inner space
+      # ([<>])?
+      # toc
 
-      (?:
-        (?:
-          [:]    # colon
-          |      # or
-          [ ]+   # 1 or more space
-        )
-        (.+?)    # $1 = parameter
-      )?
+      # (?:
+        # (?:
+          # [:]    # colon
+          # |      # or
+          # [ ]+   # 1 or more space
+        # )
+        # (.+?)    # $1 = parameter
+      # )?
 
-      [ ]*    # optional inner space
-      \}     # closer
-      [ ]*$   # optional space on line-foot
-    }ix
+      # [ ]*    # optional inner space
+      # \}     # closer
+      # [ ]*$   # optional space on line-foot
+    # }ix
 
-    TOCStartLevelRegexp = %r{
-      ^
-      (?:              # optional start
-        h
-        ([1-6])        # $1 = start level
-      )?
+    # Removed due to Rails 3 warnings:
+    # TOCStartLevelRegexp = %r{
+      # ^
+      # (?:              # optional start
+        # h
+        # ([1-6])        # $1 = start level
+      # )?
 
-      (?:              # range symbol
-        [.]{2,}|[-]    # .. or -
-      )
+      # (?:              # range symbol
+        # [.]{2,}|[-]    # .. or -
+      # )
 
-      (?:              # optional end
-        h?             # optional 'h'
-        ([1-6])        # $2 = end level
-      )?$
-    }ix
+      # (?:              # optional end
+        # h?             # optional 'h'
+        # ([1-6])        # $2 = end level
+      # )?$
+    # }ix
 
     ### Transform any Markdown-style horizontal rules in a copy of the specified
     ### +str+ and return it.
